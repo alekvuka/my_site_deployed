@@ -5,21 +5,8 @@ import './background.css'
 class BackgroundAnimations extends Component {
   constructor(props) {
       super(props);
-      this.state = {items: ['hello', 'world', 'click', 'me']};
+      this.state = {items: ['hello :) Aleks']};
       this.handleAdd = this.handleAdd.bind(this);
-    }
-
-    handleAdd() {
-      const newItems = this.state.items.concat([
-        prompt('Enter some text')
-      ]);
-      this.setState({items: newItems});
-    }
-
-    handleRemove(i) {
-      let newItems = this.state.items.slice();
-      newItems.splice(i, 1);
-      this.setState({items: newItems});
     }
 
     render() {
@@ -31,13 +18,40 @@ class BackgroundAnimations extends Component {
 
       return (
         <div>
-          <button onClick={this.handleAdd}>Add Item</button>
           <CSSTransitionGroup
             transitionName="example"
-            transitionEnterTimeout={900}
-            transitionLeaveTimeout={900}>
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={false}
+            transitionLeave={false}>
+            <h1>Let's</h1>
+          </CSSTransitionGroup>
 
-            {items}
+          <CSSTransitionGroup
+            transitionName="example"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={false}
+            transitionLeave={false}>
+            <h1>Build</h1>
+          </CSSTransitionGroup>
+
+          <CSSTransitionGroup
+            transitionName="example"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={false}
+            transitionLeave={false}>
+            <h1>Something</h1>
+          </CSSTransitionGroup>
+
+          <CSSTransitionGroup
+            transitionName="example"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={false}
+            transitionLeave={false}>
+            <h1>Together</h1>
           </CSSTransitionGroup>
         </div>
       );
