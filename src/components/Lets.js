@@ -19,7 +19,7 @@ class Lets extends Component {
             transitionAppearTimeout={1000}
             transitionEnter={false}
             transitionLeave={false}>
-              <h1 className="p2">Let's</h1>
+              <h1 className="p">Let's</h1>
           </CSSTransitionGroup>
         </div>
 

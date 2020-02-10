@@ -1,5 +1,4 @@
 import React from 'react';
-import BackgroundAnimations from './components/BackgroundAnimations.js'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
@@ -9,7 +8,34 @@ import Something from './components/Something.js'
 import Together from './components/Together.js'
 
 
-function App() {
+
+class App extends React.Component {
+
+  addBuild = () => {
+
+  }
+  addSomething = () => {
+
+  }
+
+  addTogether = () => {
+
+  }
+
+
+  componentDidMount() {
+    let buildTimer = setTimeout(() => this.addBuild, 1000)
+    let somethingTimer = setTimeout(() => this.addSomething, 1000)
+    let togetherTimer = setTimeout(() => this.addTogether, 1000)
+  }
+
+  componentWillUnmount() {
+     clearTimeout(this.buildTimer);
+     clearTimeout(this.somethingTimer);
+     clearTimeout(this.togetherTimer);
+  }
+
+  render () {
   return (
     <Container>
       <Row>
@@ -28,7 +54,7 @@ function App() {
         <button></button>
       </Row>
     </Container>
-  );
+  );}
 }
 
 export default App;
