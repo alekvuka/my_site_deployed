@@ -8,25 +8,43 @@ import Something from './components/Something.js'
 import Together from './components/Together.js'
 
 
-
 class App extends React.Component {
 
-  addBuild = () => {
-
+  constructor(props) {
+    super(props)
+    this.state = {
+      displayBuild: false,
+      displaySomething: false,
+      displayTogether: false
+    };
   }
-  addSomething = () => {
 
+  addBuild = () => {
+    this.setState((prevState, props) => ({
+      prevState,
+      displayBuild: true
+    }))
+  }
+
+  addSomething = () => {
+    this.setState((prevState, props) => ({
+      prevState,
+      displaySomething: true
+    }))
   }
 
   addTogether = () => {
-
+    this.setState((prevState, props) => ({
+      prevState,
+      displayTogether: true
+    }))
   }
 
 
   componentDidMount() {
-    let buildTimer = setTimeout(() => this.addBuild, 1000)
-    let somethingTimer = setTimeout(() => this.addSomething, 1000)
-    let togetherTimer = setTimeout(() => this.addTogether, 1000)
+    let buildTimer = setTimeout(() => this.addBuild(), 1000)
+    let somethingTimer = setTimeout(() => this.addSomething(), 2000)
+    let togetherTimer = setTimeout(() => this.addTogether(), 3000)
   }
 
   componentWillUnmount() {
@@ -42,13 +60,19 @@ class App extends React.Component {
         <Col xs={4}><Lets/></Col>
       </Row>
       <Row>
-        <Col xs={6}><Build/></Col>
+        <Col xs={6}>
+          { this.state.displayBuild === true ? <Build/> : ""}
+        </Col>
       </Row>
       <Row>
-        <Col xs={9}><Something /></Col>
+        <Col xs={9}>
+          { this.state.displaySomething === true ? <Something /> : ""}
+        </Col>
       </Row>
       <Row>
-        <Col xs={10}><Together /></Col>
+        <Col xs={10}>
+        { this.state.displayTogether === true ? <Together /> : ""}
+        </Col>
       </Row>
       <Row>
         <button></button>
