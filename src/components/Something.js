@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 
-class Lets extends Component {
+class Something extends Component {
 
 
     render() {
@@ -19,7 +19,7 @@ class Lets extends Component {
             transitionAppearTimeout={1000}
             transitionEnter={false}
             transitionLeave={false}>
-              <h1 className="p2">Let's</h1>
+              <h1 className="p3">Something</h1>
           </CSSTransitionGroup>
         </div>
 
@@ -27,4 +27,4 @@ class Lets extends Component {
     }
 }
 
-export default Lets
+export default Something

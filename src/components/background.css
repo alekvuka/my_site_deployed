@@ -26,9 +26,29 @@
 }
 
 .p {
-  background-color: yellow
+  background-color: yellow;
+  font-size: calc(100% + 9vw + 2vh);
+  padding: 0;
+  margin: 0;
 }
 
 .p2 {
-  background-color: red
+  background-color: red;
+  font-size: calc(100% + 9vw + 2vh);
+  padding: 0;
+  margin: 0;
+}
+
+.p3 {
+  background-color: red;
+  font-size: calc(100% + 9vw + 2vh);
+  padding: 0;
+  margin: 0;
+}
+
+.p4 {
+  background-color: red;
+  font-size: calc(100% + 9vw + 2vh);
+  padding: 0;
+  margin: 0;
 }
