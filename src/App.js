@@ -8,6 +8,8 @@ import Something from './components/Something.js'
 import Together from './components/Together.js'
 import { pushRotate as Menu } from 'react-burger-menu'
 import './App.css'
+import photo from './a.jpg'
+import hello from './hello.jpg'
 
 
 class App extends React.Component {
@@ -41,7 +43,6 @@ class App extends React.Component {
       displayTogether: true
     }))
   }
-
 
   componentDidMount() {
     let buildTimer = setTimeout(() => this.addBuild(), 750)
@@ -77,15 +78,20 @@ class App extends React.Component {
       <Row>
         <Col id="page-wrap" xs={10}>
         { this.state.displayTogether === true ? <Together /> : ""}
+        <img alt="astronauts" src={photo}/>
         </Col>
       </Row>
     </Container>
+
     <Menu right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
-     <a id="home" className="menu-item" href="/">Home</a>
-     <a id="about" className="menu-item" href="/about">About</a>
-     <a id="contact" className="menu-item" href="/contact">Contact</a>
-     <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
+    <nav class="bm-item-list" >
+    <a href=""><h1>Projects</h1></a>
+    <a href=""><h1>LinkedIn</h1></a>
+    <a href=""><h1>GitHub</h1></a>
+    <a href=""><h1>Email</h1></a>
+    </nav>
    </Menu>
+   
     </div>
   );}
 }
