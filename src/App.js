@@ -6,6 +6,8 @@ import Lets from './components/Lets.js'
 import Build from './components/Build.js'
 import Something from './components/Something.js'
 import Together from './components/Together.js'
+import { pushRotate as Menu } from 'react-burger-menu'
+import './App.css'
 
 
 class App extends React.Component {
@@ -57,7 +59,8 @@ class App extends React.Component {
 
   render () {
   return (
-    <Container style={{ paddingTop: '1rem', position: 'fixed', height: '100vh' }}>
+    <div  >
+    <Container id="outer-container" style={{ paddingTop: '1rem', position: 'fixed', height: '100vh' }}>
       <Row>
         <Col xs={4}><Lets/></Col>
       </Row>
@@ -72,11 +75,18 @@ class App extends React.Component {
         </Col>
       </Row>
       <Row>
-        <Col xs={10}>
+        <Col id="page-wrap" xs={10}>
         { this.state.displayTogether === true ? <Together /> : ""}
         </Col>
       </Row>
     </Container>
+    <Menu right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
+     <a id="home" className="menu-item" href="/">Home</a>
+     <a id="about" className="menu-item" href="/about">About</a>
+     <a id="contact" className="menu-item" href="/contact">Contact</a>
+     <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
+   </Menu>
+    </div>
   );}
 }
 
