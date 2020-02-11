@@ -16,7 +16,7 @@ class Build extends Component {
   }
 
   componentDidMount() {
-    let timer = setTimeout(() => this.setState({display: false}), 2000)
+    let timer = setTimeout(() => this.setState({display: false}), 2250)
   }
 
   componentWillUnmount() {

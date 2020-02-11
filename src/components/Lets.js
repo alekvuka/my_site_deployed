@@ -8,6 +8,21 @@ import Col from 'react-bootstrap/Col'
 
 class Lets extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      display: true,
+    };
+  }
+
+  componentDidMount() {
+    let timer = setTimeout(() => this.setState({display: false}), 3000)
+  }
+
+  componentWillUnmount() {
+     clearTimeout(this.timer);
+  }
+
 
     render() {
 
@@ -18,8 +33,9 @@ class Lets extends Component {
             transitionAppear={true}
             transitionAppearTimeout={1000}
             transitionEnter={false}
-            transitionLeave={false}>
-              <h1 className="p">Let's</h1>
+            transitionLeaveTimeout={1000}>
+            {this.state.display ? <h1 className="p">Let's</h1> : ""}
+
           </CSSTransitionGroup>
         </div>
 
