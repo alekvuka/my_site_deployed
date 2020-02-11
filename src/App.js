@@ -11,6 +11,7 @@ import './App.css'
 import photo from './a.jpg'
 import hello from './hello.jpg'
 import SideMenu from './components/SideMenu.js'
+import AstroImage from './components/AstroImage.js'
 
 
 class App extends React.Component {
@@ -57,7 +58,7 @@ class App extends React.Component {
     let buildTimer = setTimeout(() => this.addBuild(), 750)
     let somethingTimer = setTimeout(() => this.addSomething(), 1500)
     let togetherTimer = setTimeout(() => this.addTogether(), 2250)
-    let menuAndImageTimer = setTimeout(() => this.addMenuImage(), 3500 )
+    let menuAndImageTimer = setTimeout(() => this.addMenuImage(), 4500 )
     //let addPictureTimer = setTimeout(() => this.addTogether(), 2250)
     //let addMenuTimer = setTimeout(() => this.addTogether(), 2250)
   }
@@ -89,13 +90,11 @@ class App extends React.Component {
       <Row>
         <Col id="page-wrap" xs={10}>
         { this.state.displayTogether === true ? <Together /> : ""}
-        <img alt="astronauts" src={photo}/>
+          { this.state.displayMenuAndImage === true ? <AstroImage/> : ""}
         </Col>
       </Row>
     </Container>
-
     { this.state.displayMenuAndImage === true ? < SideMenu /> : ""}
-
     </div>
   );}
 }
