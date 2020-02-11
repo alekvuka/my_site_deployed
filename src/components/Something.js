@@ -24,7 +24,6 @@ class Something extends Component {
 
 
     render() {
-
       return (
         <div>
           <CSSTransitionGroup

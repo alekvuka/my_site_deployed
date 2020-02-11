@@ -45,6 +45,8 @@ class App extends React.Component {
     let buildTimer = setTimeout(() => this.addBuild(), 750)
     let somethingTimer = setTimeout(() => this.addSomething(), 1500)
     let togetherTimer = setTimeout(() => this.addTogether(), 2250)
+    //let addPictureTimer = setTimeout(() => this.addTogether(), 2250)
+    //let addMenuTimer = setTimeout(() => this.addTogether(), 2250)
   }
 
   componentWillUnmount() {
@@ -64,7 +66,7 @@ class App extends React.Component {
           { this.state.displayBuild === true ? <Build/> : ""}
         </Col>
       </Row>
-      <Row className="row row-no-padding" >
+      <Row >
         <Col xs={9}>
           { this.state.displaySomething === true ? <Something /> : ""}
         </Col>
