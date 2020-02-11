@@ -27,6 +27,13 @@ class SideMenu extends Component {
     render() {
       return (
         <div>
+
+        <CSSTransitionGroup
+          transitionName="example"
+          transitionAppear={true}
+          transitionAppearTimeout={1000}
+          transitionEnter={false}
+          transitionLeave={false}>
           <Menu right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
             <nav class="bm-item-list" >
               <a href=""><h1>Projects</h1></a>
@@ -35,6 +42,8 @@ class SideMenu extends Component {
               <a href=""><h1>Email</h1></a>
             </nav>
           </Menu>
+        </CSSTransitionGroup>
+
         </div>
 
       );

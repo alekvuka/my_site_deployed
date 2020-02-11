@@ -20,7 +20,8 @@ class App extends React.Component {
     this.state = {
       displayBuild: false,
       displaySomething: false,
-      displayTogether: false
+      displayTogether: false,
+      displayMenuAndImage: false
     };
   }
 
@@ -45,10 +46,18 @@ class App extends React.Component {
     }))
   }
 
+  addMenuImage = () => {
+    this.setState((prevState, props) => ({
+      prevState,
+      displayMenuAndImage: true
+    }))
+  }
+
   componentDidMount() {
     let buildTimer = setTimeout(() => this.addBuild(), 750)
     let somethingTimer = setTimeout(() => this.addSomething(), 1500)
     let togetherTimer = setTimeout(() => this.addTogether(), 2250)
+    let menuAndImageTimer = setTimeout(() => this.addMenuImage(), 3500 )
     //let addPictureTimer = setTimeout(() => this.addTogether(), 2250)
     //let addMenuTimer = setTimeout(() => this.addTogether(), 2250)
   }
@@ -57,6 +66,7 @@ class App extends React.Component {
      clearTimeout(this.buildTimer);
      clearTimeout(this.somethingTimer);
      clearTimeout(this.togetherTimer);
+     clearTimeout(this.menuAndImageTimer);
   }
 
   render () {
@@ -84,7 +94,7 @@ class App extends React.Component {
       </Row>
     </Container>
 
-    < SideMenu />
+    { this.state.displayMenuAndImage === true ? < SideMenu /> : ""}
 
     </div>
   );}
