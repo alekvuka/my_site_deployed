@@ -10,6 +10,7 @@ import { pushRotate as Menu } from 'react-burger-menu'
 import './App.css'
 import photo from './a.jpg'
 import hello from './hello.jpg'
+import SideMenu from './components/SideMenu.js'
 
 
 class App extends React.Component {
@@ -83,15 +84,8 @@ class App extends React.Component {
       </Row>
     </Container>
 
-    <Menu right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
-    <nav class="bm-item-list" >
-    <a href=""><h1>Projects</h1></a>
-    <a href=""><h1>LinkedIn</h1></a>
-    <a href=""><h1>GitHub</h1></a>
-    <a href=""><h1>Email</h1></a>
-    </nav>
-   </Menu>
-   
+    < SideMenu />
+
     </div>
   );}
 }
