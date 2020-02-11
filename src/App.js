@@ -42,9 +42,9 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    let buildTimer = setTimeout(() => this.addBuild(), 1000)
-    let somethingTimer = setTimeout(() => this.addSomething(), 2000)
-    let togetherTimer = setTimeout(() => this.addTogether(), 3000)
+    let buildTimer = setTimeout(() => this.addBuild(), 750)
+    let somethingTimer = setTimeout(() => this.addSomething(), 1500)
+    let togetherTimer = setTimeout(() => this.addTogether(), 2250)
   }
 
   componentWillUnmount() {
@@ -55,16 +55,16 @@ class App extends React.Component {
 
   render () {
   return (
-    <Container>
+    <Container style={{ paddingTop: '1rem', position: 'fixed', height: '100vh' }}>
       <Row>
         <Col xs={4}><Lets/></Col>
       </Row>
-      <Row>
+      <Row  >
         <Col xs={6}>
           { this.state.displayBuild === true ? <Build/> : ""}
         </Col>
       </Row>
-      <Row>
+      <Row className="row row-no-padding" >
         <Col xs={9}>
           { this.state.displaySomething === true ? <Something /> : ""}
         </Col>
@@ -73,9 +73,6 @@ class App extends React.Component {
         <Col xs={10}>
         { this.state.displayTogether === true ? <Together /> : ""}
         </Col>
-      </Row>
-      <Row>
-        <button></button>
       </Row>
     </Container>
   );}
