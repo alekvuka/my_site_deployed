@@ -6,6 +6,9 @@ import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import { pushRotate as Menu } from 'react-burger-menu'
+import { Sidenav } from 'rsuite';
+import { Nav } from 'rsuite';
+import {Icon} from 'rsuite';
 
 class SideMenu extends Component {
 
@@ -50,13 +53,15 @@ class SideMenu extends Component {
           transitionAppearTimeout={1000}
           transitionEnter={false}
           transitionLeave={false}>
-          <Menu right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } burgerBarClassName={ this.state.color === 'red' ? "background2" : "background1"}>
-            <nav class="bm-item-list" >
-              <a href=""><h1>Projects</h1></a>
-              <a href=""><h1>LinkedIn</h1></a>
-              <a href=""><h1>GitHub</h1></a>
-              <a href=""><h1>Email</h1></a>
-            </nav>
+          <Menu disableAutoFocus right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } burgerBarClassName={ this.state.color === 'red' ? "background2" : "background1"}>
+              <nav class="bm-item-list" >
+                <a href=""><h1>Projects</h1></a>
+                <a href=""><h1>Blog</h1></a>
+                <a href=""><h1>LinkedIn</h1></a>
+                <a href=""><h1>GitHub</h1></a>
+                <a href=""><h1>Email</h1></a>
+                <a href=""><h1>Contact</h1></a>
+              </nav>
           </Menu>
         </CSSTransitionGroup>
         </div>
@@ -65,3 +70,10 @@ class SideMenu extends Component {
 }
 
 export default SideMenu
+
+// <nav class="bm-item-list" >
+//   <a href=""><h1>Projects</h1></a>
+//   <a href=""><h1>LinkedIn</h1></a>
+//   <a href=""><h1>GitHub</h1></a>
+//   <a href=""><h1>Email</h1></a>
+// </nav>
