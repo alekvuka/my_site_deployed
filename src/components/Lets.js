@@ -23,9 +23,7 @@ class Lets extends Component {
      clearTimeout(this.timer);
   }
 
-
     render() {
-
       return (
         <div>
           <CSSTransitionGroup
@@ -35,10 +33,8 @@ class Lets extends Component {
             transitionEnter={false}
             transitionLeaveTimeout={1000}>
             {this.state.display ? <h1 className="p">Let's</h1> : ""}
-
           </CSSTransitionGroup>
         </div>
-
       );
     }
 }

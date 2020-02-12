@@ -36,7 +36,7 @@ class SideMenu extends Component {
 
   componentDidMount() {
     let timer = setTimeout(() => this.setState({display: false}), 3000)
-    let interval = setInterval(() => this.changeColor() , 1000)
+    let interval = setInterval(() => this.changeColor() , 750)
   }
 
   componentWillUnmount() {
