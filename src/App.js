@@ -37,7 +37,7 @@ class App extends React.Component {
   render () {
   return (
     <Router>
-    <div  >
+    <div>
       { this.state.displayMenu === true ? < SideMenu /> : ""}
       <Route exact path='/' component={HomePage} />
       <Route exact path="/projects" component={ProjectPage} />
