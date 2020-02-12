@@ -53,7 +53,7 @@ class SideMenu extends Component {
           transitionAppearTimeout={1000}
           transitionEnter={false}
           transitionLeave={false}>
-          <Menu disableAutoFocus right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } burgerBarClassName={ this.state.color === 'red' ? "background2" : "background1"}>
+          <Menu disableAutoFocus right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } itemListClassName={ "my-items" } burgerBarClassName={ this.state.color === 'red' ? "background2" : "background1"}>
               <nav class="bm-item-list" >
                 <a href=""><h1>Projects</h1></a>
                 <a href=""><h1>Blog</h1></a>
