@@ -57,10 +57,8 @@ class App extends React.Component {
   componentDidMount() {
     let buildTimer = setTimeout(() => this.addBuild(), 750)
     let somethingTimer = setTimeout(() => this.addSomething(), 1500)
-    let togetherTimer = setTimeout(() => this.addTogether(), 2250)
+    let togetherTimer = setTimeout(() => this.addTogether(), 4500)
     let menuAndImageTimer = setTimeout(() => this.addMenuImage(), 4500 )
-    //let addPictureTimer = setTimeout(() => this.addTogether(), 2250)
-    //let addMenuTimer = setTimeout(() => this.addTogether(), 2250)
   }
 
   componentWillUnmount() {
@@ -90,7 +88,7 @@ class App extends React.Component {
       <Row>
         <Col id="page-wrap" xs={10}>
         { this.state.displayTogether === true ? <Together /> : ""}
-          { this.state.displayMenuAndImage === true ? <AstroImage/> : ""}
+        { this.state.displayMenuAndImage === true ? <AstroImage/> : ""}
         </Col>
       </Row>
     </Container>
