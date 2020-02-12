@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
-import './background.css'
+//import './background.css'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
