@@ -12,7 +12,7 @@ import {Icon} from 'rsuite';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-class SideMenu extends Component {
+class SideMenuAnimations extends Component {
 
   constructor(props) {
     super(props)
@@ -75,7 +75,7 @@ class SideMenu extends Component {
     }
 }
 
-export default SideMenu
+export default SideMenuAnimations
 
 
 // <nav class="bm-item-list" >

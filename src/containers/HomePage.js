@@ -9,7 +9,7 @@ import Together from '../components/HomePage/Together.js'
 import { pushRotate as Menu } from 'react-burger-menu'
 import '../App.css'
 import photo from '../a.jpg'
-import SideMenu from '../components/SideMenu.js'
+import SideMenuAnimations from '../components/SideMenuAnimations.js'
 import AstroImage from '../components/AstroImage.js'
 
 
@@ -91,7 +91,7 @@ class HomePage extends React.Component {
         </Col>
       </Row>
     </Container>
-    { this.state.displayMenuAndImage === true ? < SideMenu /> : ""}
+    { this.state.displayMenuAndImage === true ? < SideMenuAnimations /> : ""}
     </div>
   );}
 }

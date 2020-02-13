@@ -12,7 +12,7 @@ import {Icon} from 'rsuite';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-class SideMenu extends Component {
+class SideMenuNormal extends Component {
 
   constructor(props) {
     super(props)
@@ -68,4 +68,4 @@ class SideMenu extends Component {
     }
 }
 
-export default SideMenu
+export default SideMenuNormal

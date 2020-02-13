@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import { pushRotate as Menu } from 'react-burger-menu'
 import './App.css'
-import SideMenu from './components/SideMenu.js'
 import HomePage from './containers/HomePage.js'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ProjectPage from './containers/ProjectPage'
@@ -38,7 +37,7 @@ class App extends React.Component {
   return (
     <Router>
     <div>
-      
+
       <Route exact path='/' component={HomePage} />
       <Route strict path="/projects" component={ProjectPage} />
       <Route exact path="/blog" component={BlogPage} />
