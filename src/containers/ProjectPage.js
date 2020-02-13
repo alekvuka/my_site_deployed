@@ -2,9 +2,12 @@ import React from 'react';
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
-import '../App.css'
-import Project from '../components/ProjectPage/Project.js'
+import Projects from '../components/ProjectPage/Projects.js'
 import SideMenuNormal from '../components/SideMenuNormal.js'
+import {RemoveScrollBar} from 'react-remove-scroll-bar';
+import {RemoveScroll} from 'react-remove-scroll';
+import CardColumns from 'react-bootstrap/CardColumns'
+import '../App.css'
 
 class ProjectPage extends React.Component {
 
@@ -23,20 +26,23 @@ class ProjectPage extends React.Component {
   }
 
   componentDidMount() {
-    let addProject = setTimeout(() => this.addProject(), 500)
+    let addProject = setInterval(() => this.addProject(), 500)
   }
 
   componentWillUnmount() {
-     clearTimeout(this.addProject);
+     clearInterval(this.addProject);
   }
 
   render () {
   return (
-    <div  >
-    <Container id="outer-container" style={{ paddingTop: '1rem', position: 'fixed', height: '100vh' }}>
+    <div className="container-div">
+    <Container id="outer-container" style={{ paddingTop: '1rem', position: 'fixed', overflow: 'scroll', height: '100vh' }}>
       <Row>
         <Col id="page-wrap" xs={11}>
             <h1 className="p4">Projects</h1>
+            <CardColumns  style={{ paddingTop: '1rem' }}>
+              <Projects />
+            </CardColumns>
         </Col>
       </Row>
     </Container>

@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ProjectPage from './containers/ProjectPage'
 import BlogPage from './containers/BlogPage'
 
+
 class App extends React.Component {
 
   constructor(props) {
@@ -37,7 +38,6 @@ class App extends React.Component {
   return (
     <Router>
     <div>
-
       <Route exact path='/' component={HomePage} />
       <Route exact path="/projects" component={ProjectPage} />
       <Route exact path="/blog" component={BlogPage} />

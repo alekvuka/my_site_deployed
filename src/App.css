@@ -125,6 +125,10 @@ a * {
   color: black;
 }
 
+.container-div {
+  overflow: hidden;
+}
+
 /* Individual item */
 
 /* .bm-item {

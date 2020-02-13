@@ -54,7 +54,7 @@ class SideMenuNormal extends Component {
           <Menu disableAutoFocus right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } itemListClassName={ "my-items" } burgerBarClassName={ this.state.color === 'red' ? "background2" : "background1"}>
             <NavLink exact to="/" activeStyle={{ background: 'pink'}}><h1>Home</h1></NavLink>
             <NavLink exact to="/projects" activeStyle={{ background: 'pink'}}><h1>Projects</h1></NavLink>
-            <NavLink exact to="/blog" activeStyle={{ background: 'pink'}}><h1>Blog</h1></NavLink>
+            <NavLink exact to="/blog" activeStyle={{ background: 'pink'}}><h1>Blogs</h1></NavLink>
             <a href="https://www.linkedin.com/in/alekvuka/"><h1>LinkedIn</h1></a>
             <a href="https://github.com/alekvuka"><h1>GitHub</h1></a>
             <a href=""><h1>Email</h1></a>
