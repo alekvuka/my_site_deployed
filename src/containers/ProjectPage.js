@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import '../App.css'
 import Project from '../components/ProjectPage/Project.js'
+import SideMenuNormal from '../components/SideMenuNormal.js'
 
 class ProjectPage extends React.Component {
 
@@ -39,6 +40,7 @@ class ProjectPage extends React.Component {
         </Col>
       </Row>
     </Container>
+    < SideMenuNormal />
     </div>
   );}
 }

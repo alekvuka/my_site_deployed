@@ -38,7 +38,7 @@ class App extends React.Component {
   return (
     <Router>
     <div>
-      { this.state.displayMenu === true ? < SideMenu /> : ""}
+      
       <Route exact path='/' component={HomePage} />
       <Route strict path="/projects" component={ProjectPage} />
       <Route exact path="/blog" component={BlogPage} />

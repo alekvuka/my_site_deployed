@@ -51,15 +51,9 @@ class SideMenu extends Component {
     render() {
       return (
         <div>
-        <CSSTransitionGroup
-          transitionName="example"
-          transitionAppear={true}
-          transitionAppearTimeout={1000}
-          transitionEnter={false}
-          transitionLeave={false}>
           <Menu disableAutoFocus right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } itemListClassName={ "my-items" } burgerBarClassName={ this.state.color === 'red' ? "background2" : "background1"}>
-          <nav class="bm-item-list" >
-            <NavLink to="/projects" exact activeStyle={{ background: 'darkblue'}}><h1>Projects</h1></NavLink>
+
+            <NavLink to="/projects" activeStyle={{ background: 'pink'}}><h1>Projects</h1></NavLink>
             <a href="/"><h1>Home</h1></a>
             <a href="/projects"><h1>Projects</h1></a>
             <a href="/blog"><h1>Blog</h1></a>
@@ -67,33 +61,11 @@ class SideMenu extends Component {
             <a href="https://github.com/alekvuka"><h1>GitHub</h1></a>
             <a href=""><h1>Email</h1></a>
             <a href=""><h1>Contact</h1></a>
-          </nav>
+
           </Menu>
-        </CSSTransitionGroup>
         </div>
       );
     }
 }
 
 export default SideMenu
-
-
-// <nav class="bm-item-list" >
-//     <NavLink to="/projects" exact activeStyle={{ background: 'darkblue'}}>Projects</NavLink>
-// </nav>
-
-// <nav class="bm-item-list" >
-//   <a href=""><h1>Projects</h1></a>
-//   <a href=""><h1>LinkedIn</h1></a>
-//   <a href=""><h1>GitHub</h1></a>
-//   <a href=""><h1>Email</h1></a>
-// </nav>
-//
-// <nav class="bm-item-list" >
-//   <a href=""><h1>Projects</h1></a>
-//   <a href=""><h1>Blog</h1></a>
-//   <a href=""><h1>LinkedIn</h1></a>
-//   <a href=""><h1>GitHub</h1></a>
-//   <a href=""><h1>Email</h1></a>
-//   <a href=""><h1>Contact</h1></a>
-// </nav>

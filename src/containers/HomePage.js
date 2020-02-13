@@ -91,6 +91,7 @@ class HomePage extends React.Component {
         </Col>
       </Row>
     </Container>
+    { this.state.displayMenuAndImage === true ? < SideMenu /> : ""}
     </div>
   );}
 }
