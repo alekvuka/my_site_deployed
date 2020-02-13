@@ -9,6 +9,8 @@ import { pushRotate as Menu } from 'react-burger-menu'
 import { Sidenav } from 'rsuite';
 import { Nav } from 'rsuite';
 import {Icon} from 'rsuite';
+import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SideMenu extends Component {
 
@@ -34,6 +36,8 @@ class SideMenu extends Component {
     }
   }
 
+
+
   componentDidMount() {
     let timer = setTimeout(() => this.setState({display: false}), 3000)
     let interval = setInterval(() => this.changeColor() , 750)
@@ -54,14 +58,16 @@ class SideMenu extends Component {
           transitionEnter={false}
           transitionLeave={false}>
           <Menu disableAutoFocus right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } itemListClassName={ "my-items" } burgerBarClassName={ this.state.color === 'red' ? "background2" : "background1"}>
-              <nav class="bm-item-list" >
-                <a href=""><h1>Projects</h1></a>
-                <a href=""><h1>Blog</h1></a>
-                <a href=""><h1>LinkedIn</h1></a>
-                <a href=""><h1>GitHub</h1></a>
-                <a href=""><h1>Email</h1></a>
-                <a href=""><h1>Contact</h1></a>
-              </nav>
+          <nav class="bm-item-list" >
+            <a><NavLink to="/projects" exact activeStyle={{ background: 'darkblue'}}><h1>Projects</h1></NavLink></a>
+            <a href="/"><h1>Home</h1></a>
+            <a href="/projects"><h1>Projects</h1></a>
+            <a href="/blog"><h1>Blog</h1></a>
+            <a href="https://www.linkedin.com/in/alekvuka/"><h1>LinkedIn</h1></a>
+            <a href="https://github.com/alekvuka"><h1>GitHub</h1></a>
+            <a href=""><h1>Email</h1></a>
+            <a href=""><h1>Contact</h1></a>
+          </nav>
           </Menu>
         </CSSTransitionGroup>
         </div>
@@ -71,9 +77,23 @@ class SideMenu extends Component {
 
 export default SideMenu
 
+
+// <nav class="bm-item-list" >
+//     <NavLink to="/projects" exact activeStyle={{ background: 'darkblue'}}>Projects</NavLink>
+// </nav>
+
 // <nav class="bm-item-list" >
 //   <a href=""><h1>Projects</h1></a>
 //   <a href=""><h1>LinkedIn</h1></a>
 //   <a href=""><h1>GitHub</h1></a>
 //   <a href=""><h1>Email</h1></a>
+// </nav>
+//
+// <nav class="bm-item-list" >
+//   <a href=""><h1>Projects</h1></a>
+//   <a href=""><h1>Blog</h1></a>
+//   <a href=""><h1>LinkedIn</h1></a>
+//   <a href=""><h1>GitHub</h1></a>
+//   <a href=""><h1>Email</h1></a>
+//   <a href=""><h1>Contact</h1></a>
 // </nav>

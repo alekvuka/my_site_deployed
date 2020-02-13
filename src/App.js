@@ -40,7 +40,7 @@ class App extends React.Component {
     <div>
       { this.state.displayMenu === true ? < SideMenu /> : ""}
       <Route exact path='/' component={HomePage} />
-      <Route exact path="/projects" component={ProjectPage} />
+      <Route strict path="/projects" component={ProjectPage} />
       <Route exact path="/blog" component={BlogPage} />
     </div>
     </Router>
