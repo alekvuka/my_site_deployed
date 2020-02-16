@@ -4,25 +4,31 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Projects from '../components/ProjectPage/Projects.js'
 import SideMenuNormal from '../components/SideMenuNormal.js'
-import {RemoveScrollBar} from 'react-remove-scroll-bar';
-import {RemoveScroll} from 'react-remove-scroll';
 import CardColumns from 'react-bootstrap/CardColumns'
 import '../App.css'
+import { connect } from 'react-redux';
 
 class ProjectPage extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      displayBuild: false,
+      numberDisplayed: 0
     };
   }
 
   addProject = () => {
+
     this.setState((prevState, props) => ({
       prevState,
       displaySomething: true
     }))
+  }
+
+  displayProjects = () => {
+    return this.props.projects.map((project) => {
+       return <Projects key={project.id} description={project.description} name={project.name} />
+    })
   }
 
   componentDidMount() {
@@ -36,12 +42,12 @@ class ProjectPage extends React.Component {
   render () {
   return (
     <div className="container-div">
-    <Container id="outer-container" style={{ paddingTop: '1rem', position: 'fixed', overflow: 'scroll', height: '100vh' }}>
+    <Container id="outer-container" style={{ paddingTop: '1rem', position: 'fixed', overflow: 'auto', height: '100vh' }}>
       <Row>
         <Col id="page-wrap" xs={11}>
             <h1 className="p4">Projects</h1>
-            <CardColumns  style={{ paddingTop: '1rem' }}>
-              <Projects />
+            <CardColumns  style={{ paddingTop: '1rem'}}>
+              {this.displayProjects()}
             </CardColumns>
         </Col>
       </Row>
@@ -51,4 +57,10 @@ class ProjectPage extends React.Component {
   );}
 }
 
-export default ProjectPage;
+const mapStateToProps = state => {
+  return {
+    projects: state.projects
+  };
+};
+
+export default connect(mapStateToProps)(ProjectPage);
