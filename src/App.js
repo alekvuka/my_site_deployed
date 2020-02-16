@@ -40,7 +40,7 @@ class App extends React.Component {
     <div>
       <Route exact path='/' component={HomePage} />
       <Route exact path="/projects" component={ProjectPage} />
-      <Route exact path="/blog" component={BlogPage} />
+      <Route exact path="/contact" component={ContactPageå} />
     </div>
     </Router>
   );}
