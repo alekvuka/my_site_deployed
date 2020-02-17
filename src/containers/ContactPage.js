@@ -5,6 +5,11 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import ContactForm from '../components/ContactPage/ContactForm.js'
+import SideMenuNormal from '../components/SideMenuNormal.js'
+import CardColumns from 'react-bootstrap/CardColumns'
 
 class ContactPage extends Component {
 
@@ -13,24 +18,24 @@ class ContactPage extends Component {
     this.state = {
       name: "",
       email: "",
-      
     };
   }
 
-
-
     render() {
       return (
-        <div>
-          <CSSTransitionGroup
-            transitionName="example"
-            transitionAppear={true}
-            transitionAppearTimeout={1000}
-            transitionEnter={false}
-            transitionLeaveTimeout={1000}>
-            {this.state.display ? <h1 className="p2">Build</h1> : ""}
-          </CSSTransitionGroup>
+
+        <div className="container-div">
+        <Container id="outer-container" style={{ paddingTop: '1rem', position: 'fixed', overflow: 'auto', height: '100vh' }}>
+          <Row>
+            <Col id="page-wrap" xs={11}>
+                <h1 className="p4">Contact</h1>
+                <ContactForm />
+            </Col>
+          </Row>
+        </Container>
+        < SideMenuNormal />
         </div>
+
 
       );
     }

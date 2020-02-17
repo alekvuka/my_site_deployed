@@ -8,6 +8,7 @@ import HomePage from './containers/HomePage.js'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ProjectPage from './containers/ProjectPage'
 import BlogPage from './containers/BlogPage'
+import ContactPage from './containers/ContactPage.js'
 
 
 class App extends React.Component {
@@ -40,7 +41,7 @@ class App extends React.Component {
     <div>
       <Route exact path='/' component={HomePage} />
       <Route exact path="/projects" component={ProjectPage} />
-      <Route exact path="/contact" component={ContactPageå} />
+      <Route exact path="/contact" component={ContactPage} />
     </div>
     </Router>
   );}

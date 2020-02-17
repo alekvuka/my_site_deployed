@@ -63,7 +63,7 @@ class SideMenuAnimations extends Component {
             <a href="https://medium.com/@aleksandarvuk"><h1>Blog</h1></a>
             <a href="https://www.linkedin.com/in/alekvuka/"><h1>LinkedIn</h1></a>
             <a href="https://github.com/alekvuka"><h1>GitHub</h1></a>
-            <a href=""><h1>Contact</h1></a>
+            <NavLink exact to="/contact" activeStyle={{ background: 'pink'}}><h1>Contact</h1></NavLink>
           </Menu>
         </CSSTransitionGroup>
         </div>
