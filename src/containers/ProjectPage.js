@@ -27,7 +27,7 @@ class ProjectPage extends React.Component {
 
   displayProjects = () => {
     return this.props.projects.map((project) => {
-       return <Projects key={project.id} description={project.description} name={project.name} />
+       return <Projects key={project.id} description={project.description} website={project.website} github={project.github} name={project.name} />
     })
   }
 

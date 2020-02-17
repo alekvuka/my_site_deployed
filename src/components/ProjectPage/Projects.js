@@ -48,9 +48,9 @@ class Projects extends React.Component {
            <Card.Text>
              {this.props.description}
            </Card.Text>
-               <Button variant="outline-primary" >GitHub</Button>
+               {this.props.github ? <Button variant="outline-primary" ><a href={this.props.github}>GitHub</a></Button> : ""}
                {"   "}
-               <Button variant="outline-danger" >WebSite</Button>
+               {this.props.website ? <Button variant="outline-primary" ><a href={this.props.website}>Website</a></Button> : ""}
          </Card.Body>
        </Card>
        <br />
