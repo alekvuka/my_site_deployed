@@ -29,9 +29,19 @@ export default function projectsReducer(
       description: "Built with React incorpirating React Bootstrap and CSSTransitions libraries.",
       github: "https://github.com/alekvuka/my_site",
       website: ""}
-    ]
-  },
+    ],
+    seenAnimations: false
+  }, action
 
 ) {
-       return state;
+  switch(action.type) {
+    case "SEEN":
+      return {
+        ...state,
+        seenAnimations: true
+      };
+      default:
+        return state;
+  }
+
 }

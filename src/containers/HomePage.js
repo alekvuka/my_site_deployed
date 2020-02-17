@@ -10,7 +10,9 @@ import { pushRotate as Menu } from 'react-burger-menu'
 import '../App.css'
 import photo from '../a.jpg'
 import SideMenuAnimations from '../components/SideMenuAnimations.js'
+import SideMenuNormal from '../components/SideMenuNormal.js'
 import AstroImage from '../components/AstroImage.js'
+import { connect } from 'react-redux';
 
 
 class HomePage extends React.Component {
@@ -18,11 +20,16 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      displayLets: false,
       displayBuild: false,
       displaySomething: false,
       displayTogether: false,
-      displayMenuAndImage: false
+      displayMenuAndImage: false,
+      displayImage: false,
+      displayNormalMenu:false,
+      hasSeen: false
     };
+
   }
 
   addBuild = () => {
@@ -49,15 +56,35 @@ class HomePage extends React.Component {
   addMenuImage = () => {
     this.setState((prevState, props) => ({
       prevState,
-      displayMenuAndImage: true
+      displayMenuAndImage: true,
     }))
   }
 
+  checkIfSeen = () => {
+    if(this.props.seenAnimations){
+      this.setState((prevState, props) => ({
+        prevState,
+        displayTogether: true,
+        displayImage: true,
+        displayMenuNormal:true,
+        displayLets: false
+      }))
+    }else{
+      let buildTimer = setTimeout(() => this.addBuild(), 750)
+      let somethingTimer = setTimeout(() => this.addSomething(), 1500)
+      let togetherTimer = setTimeout(() => this.addTogether(), 4500)
+      let menuAndImageTimer = setTimeout(() => this.addMenuImage(), 4500 )
+      let setSeen = setTimeout(() =>this.props.seen(), 5000)
+      this.setState((prevState, props) => ({
+        prevState,
+        displayLets: true
+      }))
+    }
+
+  }
+
   componentDidMount() {
-    let buildTimer = setTimeout(() => this.addBuild(), 750)
-    let somethingTimer = setTimeout(() => this.addSomething(), 1500)
-    let togetherTimer = setTimeout(() => this.addTogether(), 4500)
-    let menuAndImageTimer = setTimeout(() => this.addMenuImage(), 4500 )
+    this.checkIfSeen()
   }
 
   componentWillUnmount() {
@@ -65,6 +92,7 @@ class HomePage extends React.Component {
      clearTimeout(this.somethingTimer);
      clearTimeout(this.togetherTimer);
      clearTimeout(this.menuAndImageTimer);
+     clearTimeout(this.setSeen)
   }
 
   render () {
@@ -72,7 +100,9 @@ class HomePage extends React.Component {
     <div  >
     <Container id="outer-container" style={{ paddingTop: '1rem', position: 'fixed', height: '100vh' }}>
       <Row>
-        <Col xs={5}><Lets/></Col>
+        <Col xs={5}>
+          { this.state.displayLets === true ?   <Lets/> : ""}
+        </Col>
       </Row>
       <Row  >
         <Col xs={7}>
@@ -88,12 +118,28 @@ class HomePage extends React.Component {
         <Col id="page-wrap" xs={11}>
         { this.state.displayTogether === true ? <Together /> : ""}
         { this.state.displayMenuAndImage === true ? <AstroImage/> : ""}
+        { this.state.displayImage === true ? <AstroImage/> : ""}
         </Col>
       </Row>
     </Container>
     { this.state.displayMenuAndImage === true ? < SideMenuAnimations /> : ""}
+    { this.state.displayMenuNormal === true ? < SideMenuNormal /> : ""}
     </div>
   );}
 }
 
-export default HomePage;
+const mapStateToProps = state => {
+  return {
+    seenAnimations: state.seenAnimations
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    seen: () => {
+      dispatch({type:"SEEN"})
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
