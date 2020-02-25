@@ -72,7 +72,6 @@ class Projects extends React.Component {
             <Nav.Item>
                {this.checkForWebsite()}
             </Nav.Item>
-
             </Nav>
          </Card.Body>
        </Card>
