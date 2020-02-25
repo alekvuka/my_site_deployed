@@ -28,7 +28,7 @@ class Projects extends React.Component {
 
   checkForGithub = () => {
     if(this.props.github){
-      return <Nav.Link href={this.props.github}>GitHub</Nav.Link>
+      return <Nav.Link target="_blank" href={this.props.github}>GitHub</Nav.Link>
     }else{
       return ""
     }
@@ -36,7 +36,7 @@ class Projects extends React.Component {
 
   checkForWebsite = () => {
     if(this.props.website){
-      return <Nav.Link href={this.props.website}>Website</Nav.Link>
+      return <Nav.Link target="_blank" href={this.props.website}>Website</Nav.Link>
     }else{
       return ""
     }
