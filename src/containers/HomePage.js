@@ -110,7 +110,7 @@ class HomePage extends React.Component {
         </Col>
       </Row>
       <Row >
-        <Col xs={9}>
+        <Col width={'80%'}>
           { this.state.displaySomething === true ? <Something /> : ""}
         </Col>
       </Row>
