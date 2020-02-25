@@ -16,7 +16,7 @@ export default function projectsReducer(
       {name: "Routine Tracker",
        description: "Users can track and share their daily routines. Built with Rails with MVC framework.",
        github:"https://github.com/alekvuka/routine_tracker",
-       website: "https://dashboard.heroku.com/apps/routine-tracker-deployed" },
+       website: "https://routine-tracker-deployed.herokuapp.com/" },
       {name: "Routine Tracker JS",
        description: "Users can track their daily routines. Built in JavaScript as front end and Rails API to persist data.",
        github: "https://github.com/alekvuka/routines_js",
@@ -27,7 +27,7 @@ export default function projectsReducer(
        website: ""},
       {name: "This Site",
       description: "Built with React incorpirating React Bootstrap and CSSTransitions libraries.",
-      github: "https://github.com/alekvuka/my_site",
+      github: "",
       website: ""}
     ],
     seenAnimations: false

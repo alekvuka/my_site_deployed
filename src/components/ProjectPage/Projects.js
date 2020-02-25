@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import Nav from 'react-bootstrap/Nav'
 
 class Projects extends React.Component {
 
@@ -23,6 +24,22 @@ class Projects extends React.Component {
       prevState,
       displaySomething: true
     }))
+  }
+
+  checkForGithub = () => {
+    if(this.props.github){
+      return <Nav.Link href={this.props.github}>GitHub</Nav.Link>
+    }else{
+      return ""
+    }
+  }
+
+  checkForWebsite = () => {
+    if(this.props.website){
+      return <Nav.Link href={this.props.website}>Website</Nav.Link>
+    }else{
+      return ""
+    }
   }
 
   componentDidMount() {
@@ -48,9 +65,15 @@ class Projects extends React.Component {
            <Card.Text>
              {this.props.description}
            </Card.Text>
-               {this.props.github ? <Button variant="outline-primary" ><a href={this.props.github}>GitHub</a></Button> : ""}
-               {"   "}
-               {this.props.website ? <Button variant="outline-primary" ><a href={this.props.website}>Website</a></Button> : ""}
+           <Nav className="justify-content-center" >
+            <Nav.Item color={'red'}>
+               {this.checkForGithub()}
+            </Nav.Item>
+            <Nav.Item>
+               {this.checkForWebsite()}
+            </Nav.Item>
+
+            </Nav>
          </Card.Body>
        </Card>
        <br />
